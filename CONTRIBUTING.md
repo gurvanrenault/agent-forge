@@ -25,7 +25,7 @@ agent-forge is a collection of [Claude Code](https://claude.com/claude-code) sub
 
 ## Ground rules
 
-- **Be kind and constructive.** Assume good intent, critique ideas rather than people, and help newcomers.
+- **Be kind and constructive.** This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold it.
 - **Keep it focused.** One agent, one skill, or one fix per pull request.
 - **Safe by default.** Agents here run with real tool access on people's machines. Read the [security guardrails](#security-guardrails) before writing one.
 
@@ -39,18 +39,18 @@ Search the [existing issues](https://github.com/gurvanrenault/agent-forge/issues
 
 A bug is an agent or skill that fails to load, triggers on the wrong prompts, ignores its output format, or does something unsafe.
 
-Before reporting, check that you're on the latest version of the file and that the bug hasn't already been reported. Then open an issue that includes:
+Before reporting, check that you're on the latest version of the file and that the bug hasn't already been reported. Then open a [bug report](https://github.com/gurvanrenault/agent-forge/issues/new?template=bug_report.yml) that includes:
 
 - The agent or skill name.
 - The exact prompt you used.
 - What you expected vs. what happened (paste the output if it's short).
 - Your Claude Code version and OS.
 
-> **Found a security issue?** An agent that leaks data, runs unexpected commands, or can be hijacked through prompt injection? Please **don't** open a public issue. Contact the maintainer privately through [GitHub](https://github.com/gurvanrenault) instead.
+> **Found a security issue?** An agent that leaks data, runs unexpected commands, or can be hijacked through prompt injection? Please **don't** open a public issue. Follow [SECURITY.md](SECURITY.md) to report it privately.
 
 ### Suggesting a new agent or skill
 
-Open an issue titled `Agent idea: <name>` or `Skill idea: <name>` and describe:
+Open an [agent or skill idea](https://github.com/gurvanrenault/agent-forge/issues/new?template=agent_idea.yml) issue and describe:
 
 - The problem it solves and who it's for.
 - Example prompts that should trigger it.
@@ -130,7 +130,13 @@ Keep one logical change per branch. Never force-push a branch someone else is re
 
 ## Testing your change
 
-There's no automated test suite yet, so test by hand. Copy the agent or skill into a local `.claude/agents/` or `.claude/skills/` folder, then check that:
+Every pull request runs an automated check on agent frontmatter (`name` matches the filename, valid `tools` and `model`, listed in the README) and skill packages. Run it locally before pushing:
+
+```bash
+python .github/scripts/validate_agents.py
+```
+
+The check can't judge behavior, so also test by hand. Copy the agent or skill into a local `.claude/agents/` or `.claude/skills/` folder, then check that:
 
 - [ ] Claude Code loads it without frontmatter errors.
 - [ ] It triggers on the prompts its description promises, and not on unrelated ones.
@@ -160,7 +166,8 @@ docs: add contributing guide
 
 ## Pull request process
 
-1. Fill in the PR description: **what** changed, **why**, and **how you tested it**.
+1. Fill in the PR template: **what** changed, **why**, and **how you tested it**.
+   The **Validate** check must pass. Your PR automatically requests a review from the code owners.
 2. Make sure your PR passes this checklist:
    - [ ] One logical change.
    - [ ] README updated in the same commit if you added, renamed, or removed an agent or skill.
@@ -193,5 +200,7 @@ Agents and skills here run with real tool access, so they must be safe by defaul
 - **No bypasses:** don't use `--no-verify`, `--no-gpg-sign`, or force-push.
 
 ---
+
+By contributing, you agree that your contributions will be licensed under the [MIT License](LICENSE).
 
 Thanks again for contributing. Every agent you add helps someone get more out of Claude Code. ❤️
