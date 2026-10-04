@@ -10,7 +10,8 @@ A collection of Claude Code subagents and skills.
 
 ## Commit policy
 
-- **Ask before every commit.** Propose the files to stage and the commit message, then wait for explicit approval.
+- **Propose a commit after every completed change.** Once a change is finished, don't leave it uncommitted silently: list the files to stage and the proposed commit message, and ask the user to validate it.
+- **Ask before every commit.** Never commit until the user explicitly approves the proposed files and message.
 - **Commit directly on `main`.** No feature branches or PRs unless asked.
 - **Never push** unless explicitly asked.
 - **Use Conventional Commits:** `<type>(<scope>): <summary>`
