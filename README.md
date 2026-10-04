@@ -14,9 +14,12 @@ Located in [`agents/`](agents/).
 
 ## Skills
 
-Located in `skills/`.
+Located in [`skills/`](skills/). Each skill folder holds a `.skill` file and a plugin `.zip`.
 
-_No skills yet._
+| Skill | Description |
+|-------|-------------|
+| [expertise-poesie](skills/expertise-poesie/) | Analyzes rap, slam, and lyrics (quality, rhymes, punchlines, flow, references) and checks references on the web. Very concise output, in French. |
+| [negotiation](skills/negotiation/) | Coaches you through any negotiation or disagreement: prepare, role-play, draft messages, run it live, or debrief. |
 
 ## Usage
 
