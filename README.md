@@ -21,3 +21,7 @@ _No skills yet._
 ## Usage
 
 Copy agent files into `.claude/agents/` (project) or `~/.claude/agents/` (user), and skill folders into `.claude/skills/` or `~/.claude/skills/`.
+
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
