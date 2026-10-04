@@ -7,6 +7,13 @@ A collection of Claude Code subagents and skills. Contributor-facing rules live 
 - `agents/` — subagent definitions (`.md` with YAML frontmatter: `name`, `description`, `model`, `tools`).
 - `skills/` — packaged skills (`.skill` files).
 - `README.md` — index of agents and skills. Update its tables whenever an agent or skill is added, renamed, or removed.
+
+## README must match the repo
+
+- **`README.md` is the source of truth for users.** Its Agents and Skills tables must list exactly what is in `agents/` and `skills/`: no missing entries, no stale ones, no placeholders such as "_No skills yet._" when items exist.
+- **Update it in the same commit** as any change that adds, renames, removes, or changes the model, tools, or purpose of an agent or skill.
+- **Check it before proposing any commit:** compare the tables against `agents/` and `skills/`, and run `python .github/scripts/validate_agents.py`. If the README is out of date, fix it or tell the user, even when the gap predates your change.
+- Keep the Usage section accurate for how files are actually packaged (agents are `.md`, skills are zipped `.skill` files).
 - `CONTRIBUTING.md` — contributor guide (authoring, branching, commits, guardrails).
 - `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` (MIT) — community and legal files.
 - `.github/` — issue and PR templates, `CODEOWNERS`, and the `Validate` workflow. Run `python .github/scripts/validate_agents.py` after adding or editing an agent or skill.
