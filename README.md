@@ -23,4 +23,29 @@ Located in [`skills/`](skills/). Each skill folder holds a `.skill` file and a p
 
 ## Usage
 
-Copy agent files into `.claude/agents/` (project) or `~/.claude/agents/` (user), and skill folders into `.claude/skills/` or `~/.claude/skills/`.
+Agents are plain `.md` files. Skills ship as `<name>.skill` (a zip holding `<name>/SKILL.md` plus any `references/`) and as a plugin `.zip` (the same skill under `.claude-plugin/`).
+
+### Claude Code
+
+- **Agents:** copy the `.md` file into `.claude/agents/` (project) or `~/.claude/agents/` (user).
+- **Skills:** unzip the `.skill` file into `.claude/skills/` or `~/.claude/skills/`, so you get `skills/<name>/SKILL.md`.
+  ```sh
+  unzip skills/negotiation/negotiation.skill -d ~/.claude/skills/
+  ```
+- **As a plugin:** unzip the plugin `.zip` into a folder and start Claude Code with `claude --plugin-dir <folder>`.
+
+### Claude.ai and Claude Desktop
+
+- **Skills:** go to **Settings → Capabilities → Skills**, choose **Upload skill**, and pick the `.skill` file.
+- **Agents:** create a Project and paste the agent's body (everything below the `---` frontmatter) into the project instructions.
+
+### ChatGPT
+
+ChatGPT doesn't read Claude's `SKILL.md` or agent formats, but the instructions work as plain text:
+
+1. Create a custom GPT (**Explore GPTs → Create → Configure**) or a Project.
+2. Open the `.skill` file as a zip and paste the body of `SKILL.md` (everything below the `---` frontmatter) into **Instructions**. For an agent, paste the body of its `.md` file.
+3. Upload any `references/*.md` files as **Knowledge** (custom GPT) or project files.
+4. Give it the skill's name, and use the frontmatter `description` as its description.
+
+Tool settings (`tools`, `model`) in agent frontmatter are Claude Code–specific and don't carry over.
