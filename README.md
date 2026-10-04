@@ -17,13 +17,28 @@ Located in [`agents/`](agents/).
 
 ## Skills
 
-Located in `skills/`.
+Located in [`skills/`](skills/). Each `.skill` file is a zip archive containing a skill folder with its `SKILL.md`.
 
-_No skills yet._
+| Skill | Language | Description |
+|-------|----------|-------------|
+| [expertise-poesie](skills/expertise-poesie.skill) | French | Analyzes rap, slam, and lyrics: rhymes, punchlines, flow of ideas, and references (checked on the web). Ultra-concise output. |
+| [negotiation](skills/negotiation.skill) | English | Coaches any negotiation or disagreement: prepare, role-play, draft messages, run live, or debrief. Covers salary, contracts, work, family, and everyday disputes. |
 
 ## Usage
 
-Copy agent files into `.claude/agents/` (project) or `~/.claude/agents/` (user), and skill folders into `.claude/skills/` or `~/.claude/skills/`.
+**Agents:** copy the `.md` file into `.claude/agents/` (project) or `~/.claude/agents/` (user).
+
+```bash
+cp agents/test-architect.md ~/.claude/agents/
+```
+
+**Skills:** unzip the `.skill` file into `.claude/skills/` (project) or `~/.claude/skills/` (user).
+
+```bash
+unzip skills/negotiation.skill -d ~/.claude/skills/
+```
+
+Restart Claude Code, or start a new session, to pick them up.
 
 ## Contributing
 
