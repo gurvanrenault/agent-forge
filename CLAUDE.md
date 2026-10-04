@@ -8,6 +8,8 @@ A collection of Claude Code subagents and skills. Contributor-facing rules live 
 - `skills/` — packaged skills (`.skill` files).
 - `README.md` — index of agents and skills. Update its tables whenever an agent or skill is added, renamed, or removed.
 - `CONTRIBUTING.md` — contributor guide (authoring, branching, commits, guardrails).
+- `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` (MIT) — community and legal files.
+- `.github/` — issue and PR templates, `CODEOWNERS`, and the `Validate` workflow. Run `python .github/scripts/validate_agents.py` after adding or editing an agent or skill.
 
 ## Branching
 
