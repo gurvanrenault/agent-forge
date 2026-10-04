@@ -1,0 +1,60 @@
+name: Agent or skill idea
+description: Propose a new agent or skill, or a major change to an existing one.
+title: "idea: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Discussing an idea before building it avoids overlap with existing agents. Major changes (new tools, model upgrades, renames) need a maintainer's go-ahead first. See [CONTRIBUTING.md](https://github.com/gurvanrenault/agent-forge/blob/main/CONTRIBUTING.md#major-changes).
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - New agent
+        - New skill
+        - Change to an existing agent or skill
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Kebab-case name, or the existing agent/skill you want to change.
+      placeholder: api-designer
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem does it solve, and who is it for?
+    validations:
+      required: true
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Example prompts
+      description: Prompts that should trigger it, and ideally one that shouldn't.
+    validations:
+      required: true
+  - type: textarea
+    id: tools
+    attributes:
+      label: Tools and model
+      description: Which tools would it need, and why? Which model (haiku, sonnet, opus)?
+      placeholder: "Read, Grep, Glob on haiku (read-only analysis)"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      description: What should its output look like? Which files, if any, would it write?
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to build this myself.

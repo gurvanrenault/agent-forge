@@ -1,0 +1,54 @@
+name: Bug report
+description: An agent or skill fails to load, triggers wrongly, or ignores its output format.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! For **security issues**, don't use this form. See [SECURITY.md](https://github.com/gurvanrenault/agent-forge/blob/main/SECURITY.md).
+  - type: input
+    id: component
+    attributes:
+      label: Agent or skill
+      description: Which agent or skill is affected?
+      placeholder: test-architect
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt
+      description: The exact prompt you used.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Paste the output if it's short.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Claude Code version and OS
+      placeholder: "2.x.x on Windows 11"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and this isn't a duplicate.
+          required: true
+        - label: I'm using the latest version of the agent or skill from `main`.
+          required: true
