@@ -1,7 +1,7 @@
 ---
 name: market-analyst
 description: Analyzes OSS positioning vs incumbents and proposes a Blue Ocean pivot. Use for market/niche/competitor questions.
-tools: Read, Grep, , Write
+tools: Read, Grep, Write
 model: haiku
 ---
 

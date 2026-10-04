@@ -1,7 +1,7 @@
 ---
 name: product-owner
 description: Converts raw feature ideas into production-ready Agile specifications with zero conversational filler and strict Gherkin criteria.
-tools: Read, Grep, Glob, File, Write 
+tools: Read, Grep, Glob, Write
 model: haiku
 ---
 
