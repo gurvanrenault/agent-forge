@@ -1,5 +1,8 @@
 # agent-forge
 
+[![Validate](https://github.com/gurvanrenault/agent-forge/actions/workflows/validate.yml/badge.svg)](https://github.com/gurvanrenault/agent-forge/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A collection of Claude Code subagents and skills.
 
 ## Agents
