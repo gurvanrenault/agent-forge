@@ -11,9 +11,10 @@ Located in [`agents/`](agents/).
 
 | Agent | Model | Description |
 |-------|-------|-------------|
-| [market-analyst](agents/market-analyst.md) | haiku | Compares a product or project with competitors and suggests one way to stand out. Read-only; replies inline. |
-| [product-owner](agents/product-owner.md) | haiku | Turns a rough feature idea into a ready-to-build spec with user stories and Given/When/Then acceptance criteria. Replies inline, or writes `specs/<feature-name>.md` on request. |
-| [test-architect](agents/test-architect.md) | sonnet | Reads source code in any language and writes a plain-English unit and security test plan to `TEST_PLAN.md`. |
+| [market-analyst](agents/market-analyst.md) | haiku | Analyzes OSS positioning vs incumbents and proposes a Blue Ocean pivot. Use for market/niche/competitor questions. |
+| [product-owner](agents/product-owner.md) | haiku | Converts raw feature ideas into production-ready Agile specifications with strict Gherkin acceptance criteria. |
+| [teams-communication](agents/teams-communication.md) | sonnet | Rewrites technical Teams messages for IT teams (clarity, tone, concision) and drafts questions about the codebase to send to colleagues. |
+| [test-architect](agents/test-architect.md) | sonnet | Builds a plain-English unit and security test plan from `src/` code and writes it to `sentries_test_plan.md`. |
 
 ## Skills
 
